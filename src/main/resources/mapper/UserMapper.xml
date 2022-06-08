@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dubbomybatisprovider.mapper.UserMapper">
+    <cache-ref namespace="com.example.dubbomybatisprovider.mapper.UserMapper"/>
+    <select id="queryById" resultType="com.example.api.Pojo.User">
+        select * from user where id=#{id}
+    </select>
+    <insert id="insert" parameterType="com.example.api.Pojo.User">
+        insert into user(name,age)
+        values(#{name},#{age})
+    </insert>
+</mapper>
